@@ -31,21 +31,21 @@ function getComputerChoice(){
   } 
 }
 
-function getHumanChoice(choice){
-  //let choice = prompt("Rock, Paper, Scissors!!!").toLowerCase();
+// function getHumanChoice(choice){
+//   //let choice = prompt("Rock, Paper, Scissors!!!").toLowerCase();
   
-  if(choice === "rock"){
-    return "rock";
-  }
-  if(choice === "paper"){
-    return "paper";
-  }
-  if(choice === "scissors"){
-    return "scissors";
-  }
+//   if(choice === "rock"){
+//     return "rock";
+//   }
+//   if(choice === "paper"){
+//     return "paper";
+//   }
+//   if(choice === "scissors"){
+//     return "scissors";
+//   }
 
-  return "Invalid choice";
-}
+//   return "Invalid choice";
+// }
 
 function playRound(humanChoice){
   let computerChoice = getComputerChoice();
@@ -99,8 +99,8 @@ buttons.forEach(button => {
 
     if(humanScore >= 5 || computerScore >= 5) return;
 
-    const humanChoice = getHumanChoice(e.target.id);
-    playRound(humanChoice);
+    //const humanChoice = getHumanChoice(e.target.id);
+    playRound(e.target.id);
 
     if(humanScore >= 5){
       console.log("Winner: PLAYER");
