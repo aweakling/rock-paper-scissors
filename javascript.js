@@ -92,28 +92,28 @@ function playRound(humanChoice){
   score.textContent = "Player: " + humanScore + "   Computer: " + computerScore;
 }
 
-function playGame(){
+// function playGame(){
 
-    for(let i = 1; i <= 5; i++){
-        let play = playRound();
+//     for(let i = 1; i <= 5; i++){
+//         let play = playRound();
 
-        if (humanScore > computerScore){
-            console.log("You win!!!" + " Player Score: " + humanScore + " Computer Score: " + computerScore);
-        } else if(humanScore === computerScore){
-            console.log("It's a tie!!!" + " Player Score: " + humanScore + " Computer Score: " + computerScore);
-        } else {
-            console.log("You lose!!!" + " Player Score: " + humanScore + " Computer Score: " + computerScore);
-        }
-    }
+//         if (humanScore > computerScore){
+//             console.log("You win!!!" + " Player Score: " + humanScore + " Computer Score: " + computerScore);
+//         } else if(humanScore === computerScore){
+//             console.log("It's a tie!!!" + " Player Score: " + humanScore + " Computer Score: " + computerScore);
+//         } else {
+//             console.log("You lose!!!" + " Player Score: " + humanScore + " Computer Score: " + computerScore);
+//         }
+//     }
 
-    if(humanScore > computerScore){
-      console.log("Winner: PLAYER");
-    } else {
-      console.log("Winner: COMPUTER");
-    }
+//     if(humanScore > computerScore){
+//       console.log("Winner: PLAYER");
+//     } else {
+//       console.log("Winner: COMPUTER");
+//     }
 
-    return "Player Score: " + humanScore + " Computer Score: " + computerScore;
-}
+//     return "Player Score: " + humanScore + " Computer Score: " + computerScore;
+// }
 
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
