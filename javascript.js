@@ -31,6 +31,8 @@ function getComputerChoice(){
   } 
 }
 
+// unnecessary since playRound(e.target.id) already picks the choice
+
 // function getHumanChoice(choice){
 //   //let choice = prompt("Rock, Paper, Scissors!!!").toLowerCase();
   
