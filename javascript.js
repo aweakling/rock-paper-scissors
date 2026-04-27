@@ -1,5 +1,5 @@
 const rpsButtons = document.querySelector("#rpsButtons");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("#rpsButtons button");
 // const rock = document.querySelector("#rock");
 // const paper = document.querySelector("#paper");
 // const scissors = document.querySelector("#scissors");
@@ -10,7 +10,9 @@ const computer = document.querySelector("#computer");
 const battle = document.querySelector("#battle");
 const score = document.querySelector("#score");
 const winner = document.querySelector("#winner");
+const reset = document.querySelector("#reset");
 
+reset.style.marginTop = "20px";
 
 let humanScore = 0;
 let computerScore = 0;
@@ -92,6 +94,37 @@ function playRound(humanChoice){
   score.textContent = "Player: " + humanScore + "   Computer: " + computerScore;
 }
 
+buttons.forEach(button => {
+  button.addEventListener("click", (e) => {
+
+    if(humanScore >= 5 || computerScore >= 5) return;
+
+    const humanChoice = getHumanChoice(e.target.id);
+    playRound(humanChoice);
+
+    if(humanScore >= 5){
+      console.log("Winner: PLAYER");
+      winner.textContent = "Winner: PLAYER"
+    } else if (computerScore >= 5) {
+      console.log("Winner: COMPUTER");
+      winner.textContent = "Winner: COMPUTER";
+    }
+  });
+});
+
+reset.addEventListener("click", () => {
+  humanScore = 0;
+  computerScore = 0;
+
+  player.textContent = "Player: "
+  computer.textContent = "Computer: "
+  battle.textContent = " - "
+  score.textContent = "Player:   Computer: "
+  winner.textContent = " - ";
+
+  console.clear();
+});
+
 // function playGame(){
 
 //     for(let i = 1; i <= 5; i++){
@@ -114,23 +147,5 @@ function playRound(humanChoice){
 
 //     return "Player Score: " + humanScore + " Computer Score: " + computerScore;
 // }
-
-buttons.forEach(button => {
-  button.addEventListener("click", (e) => {
-
-    if(humanScore >= 5 || computerScore >= 5) return;
-
-    const humanChoice = getHumanChoice(e.target.id);
-    playRound(humanChoice);
-
-    if(humanScore >= 5){
-      console.log("Winner: PLAYER");
-      winner.textContent = "Winner: PLAYER"
-    } else if (computerScore >= 5) {
-      console.log("Winner: COMPUTER");
-      winner.textContent = "Winner: COMPUTER";
-    }
-  });
-});
 
 // console.log(playGame());
