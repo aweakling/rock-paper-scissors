@@ -117,6 +117,9 @@ function playRound(humanChoice){
 
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
+
+    if(humanScore >= 5 || computerScore >= 5) return;
+
     const humanChoice = getHumanChoice(e.target.id);
     playRound(humanChoice);
 
